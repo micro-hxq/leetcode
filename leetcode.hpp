@@ -34,16 +34,16 @@ static int test_pass = 0;
         else                                                                    \
         {                                                                       \
             fprintf(stderr, "%s:%d: expect: " format ", acutal: " format "\n",  \
-                __FILE__, __LINE__, expect, actual);                            \
+                    __FILE__, __LINE__, expect, actual);                        \
             main_ret = 1;                                                       \
         }                                                                       \
     } while(0)
 
 #define CHECK_TRUE(expression)  \
-    LEETCODE_EUQAL(expression, 1, expression, "%d")
+    LEETCODE_EUQAL((expression) == true, 1, expression, "%d")
 
 #define CHECK_FALSE(expression) \
-    LEETCODE_EUQAL(expression, 0, expression, "%d")
+    LEETCODE_EUQAL((expression) == false, 0, expression, "%d")
 
 #define TEST_REPORT()                                           \
     do {                                                        \

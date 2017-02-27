@@ -11,8 +11,8 @@ class Solution {
 public:
     vector<string> letterCombinations(string digits) {
         vector<string> res;
-        if(digits.empty())  return res;
-        helper(res, "", digits, 0);
+        if(!digits.empty())
+            helper(res, "", digits, 0);
         return res;
     }
     void helper(vector<string> &res, const string& str, const string& digits, int id)
@@ -24,7 +24,7 @@ public:
             for(char ch : tab[idx])
                 res.push_back(str + ch);
         }
-        else
+        else    
         {
             for(char ch : tab[idx])
                 helper(res, str + ch, digits, id + 1);
