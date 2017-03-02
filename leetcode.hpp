@@ -21,6 +21,7 @@
 #include <functional>
 #include <utility>
 #include <climits>
+#include <bitset>
 
 static int main_ret = 0;
 static int test_count = 0;
