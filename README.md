@@ -2,4 +2,4 @@
 
 ---
 
-This repo is to record answers to problems on [LeetCodeOJ](https://leetcode.com/problemset/algorithms/).
+This repo is to record my cplusplus solutions to problems on [LeetCodeOJ](https://leetcode.com/problemset/algorithms/).
