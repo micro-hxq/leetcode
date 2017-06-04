@@ -23,6 +23,7 @@
 #include <climits>
 #include <bitset>
 #include <sstream>
+#include <numeric>
 
 static int main_ret = 0;
 static int test_count = 0;
