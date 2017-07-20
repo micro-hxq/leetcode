@@ -24,27 +24,46 @@ struct TreeNode {
 class Solution {
 public:
     vector<int> preorderTraversal(TreeNode* root) {
-        vector<int> res;
-        stack<TreeNode*> st;
-        helper(res, st, root);
-        while(!st.empty())
-        {
-            auto p = st.top();
-            st.pop();
-            if(p->right)
-                helper(res, st, p->right);
-        }
-        return res;
-    }
-    void helper(vector<int>& res, stack<TreeNode*>& st, TreeNode* root)
+    //     vector<int> res;
+    //     stack<TreeNode*> st;
+    //     helper(res, st, root);
+    //     while(!st.empty())
+    //     {
+    //         auto p = st.top();
+    //         st.pop();
+    //         if(p->right)
+    //             helper(res, st, p->right);
+    //     }
+    //     return res;
+    // }
+    // void helper(vector<int>& res, stack<TreeNode*>& st, TreeNode* root)
+    // {
+    //     while(root)
+    //     {
+    //         res.push_back(root->val);
+    //         st.push(root);
+    //         root = root->left;
+    //     }
+    // }
+
+    vector<int> ans;
+    stack<TreeNode*> st;
+    while(root || !st.empty())
     {
-        while(root)
+        if(root != nullptr)
         {
-            res.push_back(root->val);
             st.push(root);
+            ans.push_back(root->val);
             root = root->left;
         }
+        else
+        {
+            root =  st.top();
+            st.pop();
+            root = root->right;
+        }
     }
+    return ans;
 };
 
 
